@@ -1,1 +1,20 @@
+from nltk.stem import PorterStemmer
+print("Name: PAVAN JANA")
+print("Reg No: 192427313")
+stemmer = PorterStemmer()
+words = ["playing", "studies", "running", "cars", "better"]
+lemmas = {
+    "playing": "play",
+    "studies": "study",
+    "running": "run",
+    "cars": "car",
+    "better": "good"
+}
+
+print("\n{:<15} {:<15} {:<15}".format("Word", "Stem", "Lemma"))
+print("-" * 45)
+for word in words:
+    print("{:<15} {:<15} {:<15}".format(
+        word, stemmer.stem(word), lemmas[word]
+    ))
 
