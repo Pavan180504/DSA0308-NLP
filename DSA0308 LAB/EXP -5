@@ -11,4 +11,3 @@ print("Reg No: 192472313")
 print("\nOriginal Words\tStemmed Words")
 for word in words:
     print(word, "\t\t", ps.stem(word))
-
