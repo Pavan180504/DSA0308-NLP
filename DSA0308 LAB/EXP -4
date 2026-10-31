@@ -1,1 +1,13 @@
-
+def morphological_parser(word):
+    if word.endswith(('s', 'sh', 'ch', 'x', 'z')):
+        return word + 'es'
+    elif word.endswith('y') and word[-2] not in 'aeiou':
+        return word[:-1] + 'ies'
+    else:
+        return word + 's'
+word = input("Enter a singular noun: ")
+plural = morphological_parser(word)
+print("Name: Pavan Jana")
+print("Reg No: 192472313")
+print("Singular noun:", word)
+print("Plural noun:", plural)
