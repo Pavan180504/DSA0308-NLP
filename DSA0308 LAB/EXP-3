@@ -10,7 +10,6 @@ lemmas = {
     "cars": "car",
     "better": "good"
 }
-
 print("\n{:<15} {:<15} {:<15}".format("Word", "Stem", "Lemma"))
 print("-" * 45)
 for word in words:
