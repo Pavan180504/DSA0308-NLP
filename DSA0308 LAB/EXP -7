@@ -1,1 +1,13 @@
-
+import nltk
+# Input text
+text = "The student is learning Python programming."
+# Tokenization
+words = nltk.wordpunct_tokenize(text)
+# POS Tagging
+pos_tags = nltk.pos_tag(words)
+# Display output
+print("Name: Pavan Jana")
+print("Reg No: 192472313")
+print("\nWord\t\tPOS Tag")
+for word, tag in pos_tags:
+    print(word, "\t\t", tag)
