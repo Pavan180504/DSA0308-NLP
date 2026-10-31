@@ -1,1 +1,14 @@
+import nltk
+from nltk.stem import PorterStemmer
+# Create Porter Stemmer object
+ps = PorterStemmer()
+# List of words
+words = ["playing", "played", "player", "connected",
+         "connecting", "connection", "happiness", "studies"]
+# Perform stemming
+print("Name: Pavan Jana")
+print("Reg No: 192472313")
+print("\nOriginal Words\tStemmed Words")
+for word in words:
+    print(word, "\t\t", ps.stem(word))
 
