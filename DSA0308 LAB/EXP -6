@@ -1,1 +1,28 @@
-
+import random
+# Training text
+text = "I love python programming. I love machine learning. Python is easy to learn."
+# Tokenize the text
+words = text.lower().replace(".", "").split()
+# Build Bigram model
+bigram = {}
+for i in range(len(words) - 1):
+    current = words[i]
+    next_word = words[i + 1]
+    if current not in bigram:
+        bigram[current] = []
+    bigram[current].append(next_word)
+# Generate text
+def generate_text(start_word, length):
+    word = start_word.lower()
+    result = [word]
+    for i in range(length - 1):
+        if word in bigram:
+            word = random.choice(bigram[word])
+            result.append(word)
+        else:
+            break
+    return " ".join(result)
+print("Name: Pavan Jana")
+print("Reg No: 192472313")
+print("\nGenerated Text:")
+print(generate_text("i", 8))
