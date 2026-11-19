@@ -1,1 +1,12 @@
-
+import re
+def check_expression(expr):
+    pattern = r'^(FORALL|EXISTS)\s+[a-z]\s*\(.*\)$'
+    if re.match(pattern, expr):
+        return "Valid FOPC Expression"
+    else:
+        return "Invalid FOPC Expression"
+print("NAME : Pavan Jana")
+print("REG NO : 192472313")
+expression = "FORALL x (Human(x))"
+print("Expression:", expression)
+print(check_expression(expression))
