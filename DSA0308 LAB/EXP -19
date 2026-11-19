@@ -1,1 +1,12 @@
-
+import nltk
+from nltk.wsd import lesk
+nltk.download('wordnet')
+nltk.download('punkt')
+sentence = "I deposited money in the bank"
+word = "bank"
+sense = lesk(nltk.word_tokenize(sentence), word)
+print("NAME : Pavan Jana")
+print("REG NO : 192472313")
+print("WORD SENSE DISAMBIGUATION:")
+print("Word:", word)
+print("Meaning:", sense.definition() if sense else "No meaning found")
