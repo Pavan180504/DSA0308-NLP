@@ -1,1 +1,23 @@
-
+import nltk
+grammar = nltk.CFG.fromstring("""
+S -> NP_S VP_S | NP_P VP_P
+NP_S -> 'he' | 'she'
+NP_P -> 'they' | 'we'
+VP_S -> 'runs' | 'plays'
+VP_P -> 'run' | 'play'
+""")
+parser = nltk.ChartParser(grammar)
+sentences = [
+    ['he', 'runs'],
+    ['she', 'plays'],
+    ['they', 'play'],
+    ['he', 'play']
+]
+print("NAME : Pavan Jana")
+print("REG NO : 192472313")
+print("SUBJECT VERB AGREEMENT:")
+for sentence in sentences:
+    if list(parser.parse(sentence)):
+        print(" ".join(sentence), ": Correct")
+    else:
+        print(" ".join(sentence), ": Incorrect")
