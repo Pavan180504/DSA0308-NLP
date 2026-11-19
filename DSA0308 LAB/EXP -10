@@ -1,1 +1,13 @@
-
+import nltk
+text = "The boy plays cricket"
+words = nltk.word_tokenize(text)
+tags = [(word, 'NN') for word in words]
+for i in range(len(tags)):
+    if tags[i][0].lower() in ['the', 'a', 'an']:
+        tags[i] = (tags[i][0], 'DT')
+    elif tags[i][0].endswith('s'):
+        tags[i] = (tags[i][0], 'VBZ')
+print("NAME : Pavan Jana")
+print("REG NO : 192472313")
+print("TRANSFORMATION BASED TAGGING:")
+print(tags)
