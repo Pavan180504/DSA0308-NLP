@@ -1,1 +1,13 @@
-
+import nltk
+from nltk.tokenize import word_tokenize
+nltk.download('punkt', quiet=True)
+nltk.download('punkt_tab', quiet=True)
+nltk.download('averaged_perceptron_tagger_eng', quiet=True)
+text = "The boy plays cricket"
+words = word_tokenize(text)
+tags = nltk.pos_tag(words)
+print("NAME : Pavan Jana")
+print("REG NO : 192472313")
+print("POS TAGGING:")
+for word, tag in tags:
+    print(word, ":", tag)
