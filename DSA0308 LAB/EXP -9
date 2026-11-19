@@ -1,1 +1,16 @@
-
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk import RegexpTagger
+text = "The boy plays cricket"
+patterns = [
+    (r'.*ing$', 'VBG'),
+    (r'.*ed$', 'VBD'),
+    (r'.*ly$', 'RB'),
+    (r'.*', 'NN')
+]
+tagger = RegexpTagger(patterns)
+words = word_tokenize(text)
+print("NAME : Pavan Jana")
+print("REG NO : 192472313")
+print("RULE BASED POS TAGGING:")
+print(tagger.tag(words))
