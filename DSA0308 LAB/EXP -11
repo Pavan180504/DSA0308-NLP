@@ -1,1 +1,16 @@
-
+import nltk
+grammar = nltk.CFG.fromstring("""
+S -> NP VP
+NP -> Det N
+VP -> V NP
+Det -> 'the'
+N -> 'boy' | 'ball'
+V -> 'kicks'
+""")
+parser = nltk.RecursiveDescentParser(grammar)
+sentence = ['the', 'boy', 'kicks', 'the', 'ball']
+print("NAME : Pavan Jana")
+print("REG NO : 192472313")
+print("TOP DOWN PARSER:")
+for tree in parser.parse(sentence):
+    print(tree)
